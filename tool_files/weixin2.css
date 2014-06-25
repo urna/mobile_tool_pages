@@ -1,0 +1,72 @@
+#idcardbox {
+	TEXT-ALIGN: center; PADDING-TOP: 10px
+}
+#idcardbox H1 {
+	FONT-SIZE: 16px; HEIGHT: 35px; FONT-FAMILY: 'Microsoft Yahei','Simsun'; FONT-WEIGHT: normal; COLOR: #333; TEXT-ALIGN: center; LINE-HEIGHT: 35px
+}
+#idcardbox H2 {
+	FONT-SIZE: 14px; HEIGHT: 25px; MARGIN-TOP: 15px; LINE-HEIGHT: 25px
+}
+.roundinput {
+	BORDER-TOP: #ccc 1px solid; HEIGHT: 32px; BORDER-RIGHT: #ccc 1px solid; BORDER-BOTTOM: #ccc 1px solid; PADDING-LEFT: 3px; MARGIN: 10px auto; BORDER-LEFT: #ccc 1px solid; WIDTH: 90%; border-radius: 4px; -webkit-border-radius: 4px; -moz-border-radius: 4px; box-shadow: 1px 1px 1px #ddd
+}
+#resultbox {
+	FONT-SIZE: 14px; PADDING-BOTTOM: 5px; TEXT-ALIGN: left; PADDING-TOP: 5px; PADDING-LEFT: 5px; MIN-HEIGHT: 100px; LINE-HEIGHT: 20px; PADDING-RIGHT: 5px; WIDTH: 93%
+}
+#resultbox A {
+	FONT-SIZE: 14px
+}
+#resultbox H3 {
+	FONT-SIZE: 16px
+}
+#resultbox .green {
+	COLOR: #559717
+}
+.hint {
+	COLOR: #999; TEXT-ALIGN: left; MARGIN-LEFT: 5px; LINE-HEIGHT: 22px
+}
+#fdbox {
+	BORDER-TOP: #9dc08d 1px solid; BORDER-RIGHT: #9dc08d 1px solid; BORDER-BOTTOM: #9dc08d 1px solid; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 5px; MARGIN: 5px auto; BORDER-LEFT: #9dc08d 1px solid; PADDING-RIGHT: 5px; WIDTH: 95%; border-radius: 4px
+}
+.loading {
+	HEIGHT: 60px; TEXT-ALIGN: center; LINE-HEIGHT: 60px
+}
+.loading IMG {
+	VERTICAL-ALIGN: middle
+}
+.hotnews {
+	OVERFLOW: hidden; PADDING-BOTTOM: 5px; PADDING-TOP: 5px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; BACKGROUND-COLOR: #fff
+}
+.hotnews H3 {
+	FONT-SIZE: 18px; BORDER-TOP: #c6c6c6 1px solid; HEIGHT: 40px; BORDER-BOTTOM: #c6c6c6 1px solid; PADDING-LEFT: 10px; FILTER: progid:DXImageTransform.Microsoft.gradient(startColorstr='#FBFBFB',endColorstr='#EFEFEF',GradientType=0); LINE-HEIGHT: 42px
+}
+.hotnews H3 SPAN {
+	BACKGROUND: url(../images/tool.png) no-repeat 0px 10px; PADDING-LEFT: 20px; DISPLAY: block; WIDTH: 100%; -webkit-background-size: 15px 19px; background-size: 15px 19px
+}
+.hotnews UL LI {
+	HEIGHT: 35px; BORDER-BOTTOM: #ddd 1px solid; PADDING-LEFT: 10px; LINE-HEIGHT: 35px
+}
+.hotnews UL LI A {
+	COLOR: #6c6c6c
+}
+.toollist UL LI {
+	OVERFLOW: hidden; MARGIN-BOTTOM: 10px; HEIGHT: 93px; FLOAT: left; TEXT-ALIGN: center; MARGIN-LEFT: 10px; LINE-HEIGHT: 22px; WIDTH: 30%; BACKGROUND-COLOR: #1aa6fe
+}
+UNKNOWN {
+	MARGIN-LEFT: 6px
+}
+.toollist UL LI A {
+	FONT-SIZE: 14px; HEIGHT: 100%; BACKGROUND-REPEAT: no-repeat; POSITION: relative; BACKGROUND-POSITION: center 12px; COLOR: #fff; TEXT-DECORATION: none; MARGIN: 0px auto; DISPLAY: block; WIDTH: 100%; -moz-background-size: 48px 48px; -webkit-background-size: 48px 48px; -o-background-size: 48px 48px; background-size: 48px 48px
+}
+.toollist UL LI A SPAN {
+	FONT-SIZE: 14px; RIGHT: 0px; POSITION: absolute; LEFT: 0px; 
+	TOP: 40%;}
+.toollist UL LI.tblue {
+	BACKGROUND-COLOR: #1aa6fe
+}
+.toollist UL LI.tgreen {
+	BACKGROUND-COLOR: #339933
+}
+.toollist UL LI.torange {
+	BACKGROUND-COLOR: #ff7f19
+}
