@@ -1,0 +1,232 @@
+
+		window.alert = function(name){ 
+
+
+			 var iframe = document.createElement("IFRAME");  
+            iframe.style.display="none";  
+            iframe.setAttribute("src", 'data:text/plain,');  
+            document.documentElement.appendChild(iframe);  
+            window.frames[0].window.alert(name);  
+            iframe.parentNode.removeChild(iframe);  
+	
+            
+        }  
+        
+        
+                var url = window.location.href.split('#')[0];  
+url = url.replace(/\&/g, '%26');
+
+//定义URL
+    var siteUrl = "http://h5.weathercn.com/";
+var shareurl="http://h5.weathercn.com/ArborDay/";
+var shareimg=siteUrl+"ArborDay/images/share.jpg?version=20170310";
+var sharetitle="围堵沙尘暴-根本停不下来，看我植树狂魔的厉害！";
+var sharecontent="植树节不来植个树嘛少侠？";
+    window.shareData = {
+        "imgUrl":siteUrl+"ArborDay/images/share.jpg?version=20170310",//分享封面
+        "timeLineLink": shareurl,//分享连接
+        "tTitle": "围堵沙尘暴-根本停不下来，看我植树狂魔的厉害！",//分享标题
+        "tContent": "植树节不来植个树嘛少侠？"//分享内容
+    };
+    var mebtnopenurl =siteUrl+"ArborDay/";
+    function showme(){
+    	//游戏结束后底部按钮跳转连接设置
+        window.location.href="#";
+    }
+    function wxSetTitle(title) {
+    document.title = title;
+    var mobile = navigator.userAgent.toLowerCase();
+    if (/iphone|ipad|ipod/.test(mobile)) {
+        var iframe = document.createElement('iframe');
+        iframe.style.visibility = 'hidden';
+        iframe.setAttribute('src', 'loading.png');
+        var iframeCallback = function() {
+            setTimeout(function() {
+                iframe.removeEventListener('load', iframeCallback);
+                document.body.removeChild(iframe);
+            }, 0);
+        };
+        iframe.addEventListener('load', iframeCallback);
+        document.body.appendChild(iframe);
+    }
+}
+    function share(n , m){
+        if(m == 0){
+            document.title = "围堵沙尘暴-环保人人有责，看我植树狂魔的厉害！";
+            window.shareData.tTitle = "围堵沙尘暴-环保人人有责，看我植树狂魔的厉害！";
+            window.shareData.timeLineLink=shareurl;
+            sharetitle = "围堵沙尘暴-环保人人有责，看我植树狂魔的厉害！";
+            wxSetTitle("围堵沙尘暴-环保人人有责，看我植树狂魔的厉害！");
+        }
+        if(m == 1){
+            document.title = "我用了"+n+"步围住沙尘暴，击败"+(100-n)+"%的人，你能超过我吗？";
+            window.shareData.tTitle = "我用了"+n+"步围住沙尘暴，击败"+(100-n)+"%的人，你能超过我吗？";
+            window.shareData.timeLineLink=shareurl;
+            sharetitle = "我用了"+n+"步围住沙尘暴，击败"+(100-n)+"%的人，你能超过我吗？";
+            wxSetTitle("我用了"+n+"步围住沙尘暴，击败"+(100-n)+"%的人，你能超过我吗？");
+        }
+        if(m == 2){
+            document.title = "我没有围住它，谁能帮个忙？";
+            window.shareData.tTitle = "我没有围住它，谁能帮个忙？";
+            window.shareData.timeLineLink=shareurl;
+            sharetitle = "我没有围住它，谁能帮个忙？";
+            wxSetTitle("我没有围住它，谁能帮个忙？");
+        }
+        
+        
+  $.ajax({
+    type : "get",
+    url : "http://h5.weathercn.com/ArborDay/wx/index.php?version=20170310&urlstr="+url,
+    dataType : "jsonp",
+    jsonp: "callback",
+    jsonpCallback:"success_jsonpCallback",
+    success : function(data){
+    	 
+        wx.config({
+debug: false, 
+appId: data.appId,
+timestamp: data.timestamp,
+nonceStr: data.nonceStr,
+signature: data.signature,
+jsApiList: [
+"checkJsApi","onMenuShareTimeline","onMenuShareAppMessage","onMenuShareQQ","onMenuShareWeibo","hideMenuItems","showMenuItems","hideAllNonBaseMenuItem","showAllNonBaseMenuItem","translateVoice","startRecord","stopRecord","onRecordEnd","playVoice","pauseVoice","stopVoice","uploadVoice","downloadVoice","chooseImage","previewImage","uploadImage","downloadImage","getNetworkType","openLocation","getLocation","hideOptionMenu","showOptionMenu","closeWindow","scanQRCode","chooseWXPay","openProductSpecificView","addCard","chooseCard","openCard"
+]
+});
+
+alert(sharetitle);
+	url= url.substr(0, url.indexOf('%26'));  
+	
+  //分享到朋友圈
+wx.onMenuShareTimeline({
+    title: sharetitle, // 分享标题
+    link: url, // 分享链接
+    imgUrl: data.shareimg, // 分享图标
+    success: function () { 
+        document.location.href = mebtnopenurl;
+    },
+    cancel: function () { 
+        document.location.href = mebtnopenurl;
+    }
+});
+//分享给朋友
+wx.onMenuShareAppMessage({
+    title: sharetitle, // 分享标题
+    desc: data.sharecontent, // 分享描述
+    link: url, // 分享链接
+    imgUrl: data.shareimg, // 分享图标
+    type: '', // 分享类型,music、video或link，不填默认为link
+    dataUrl: '', // 如果type是music或video，则要提供数据链接，默认为空
+    success: function () { 
+        document.location.href = mebtnopenurl;
+    },
+    cancel: function () { 
+        document.location.href = mebtnopenurl;
+    }
+});
+//分享到QQ
+wx.onMenuShareQQ({
+    title: sharetitle, // 分享标题
+    desc: data.sharecontent, // 分享描述
+    link: url, // 分享链接
+    imgUrl: data.shareimg, // 分享图标
+    success: function () { 
+       document.location.href = mebtnopenurl;
+    },
+    cancel: function () { 
+       document.location.href = mebtnopenurl;
+    }
+});
+//分享到腾讯微博
+wx.onMenuShareWeibo({
+    title: sharetitle, // 分享标题
+    desc: data.sharecontent, // 分享描述
+    link: url, // 分享链接
+    imgUrl: data.shareimg, // 分享图标
+    success: function () { 
+       document.location.href = mebtnopenurl;
+    },
+    cancel: function () { 
+        document.location.href = mebtnopenurl;
+    }
+});
+//分享到QQ空间
+wx.onMenuShareQZone({
+    title: sharetitle, // 分享标题
+    desc: data.sharecontent, // 分享描述
+    link: url, // 分享链接
+    imgUrl: data.shareimg, // 分享图标
+    success: function () { 
+       document.location.href = mebtnopenurl;
+    },
+    cancel: function () { 
+        document.location.href = mebtnopenurl;
+    }
+});
+
+   
+    
+  /*  wx.error(function(res){
+alert(res);
+    // config信息验证失败会执行error函数，如签名过期导致验证失败，具体错误信息可以打开config的debug模式查看，也可以在返回的res参数中查看，对于SPA可以在这里更新签名。
+
+ });
+*/
+
+
+
+},
+                error:function(data){
+                    alert("连接失败！");
+                }
+});
+
+
+
+document.getElementById("sbg").className="sbgshow";
+        window.setTimeout(hiddenMe, 5000);
+        $("#myfav").css("display","none");
+
+
+
+    }
+    function hiddenMe(){
+        document.getElementById("sbg").className="sbg";
+    }
+    //分享按钮设置
+    //分享给好友
+   /* document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        WeixinJSBridge.on('menu:share:appmessage', function(argv) {
+            WeixinJSBridge.invoke('sendAppMessage', {
+                "img_url": window.shareData.imgUrl,
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function(res) {
+                document.location.href = mebtnopenurl;
+            })
+        });
+        //分享到朋友圈
+        WeixinJSBridge.on('menu:share:timeline', function(argv) {
+            WeixinJSBridge.invoke('shareTimeline', {
+                "img_url":  window.shareData.imgUrl,
+                "img_width": "640",
+                "img_height": "640",
+                "link": window.shareData.timeLineLink,
+                "desc": window.shareData.tContent,
+                "title": window.shareData.tTitle
+            }, function(res) {
+                document.location.href = mebtnopenurl;
+            });
+        });
+        //分享到微博
+        WeixinJSBridge.on('menu:share:weibo', function(argv) {
+            WeixinJSBridge.invoke('shareWeibo', {
+                "content": window.shareData.tContent,
+                "url": window.shareData.timeLineLink
+            }, function(res) {
+                document.location.href = mebtnopenurl;
+            });
+        });
+        }, false)
+        */
+    
