@@ -59,18 +59,18 @@ var sharecontent="围住赵瑞龙 保卫美丽银滩!";
             wxSetTitle("围住赵瑞龙 保卫美丽银滩!");
         }
         if(m == 1){
-            document.title = "我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
-            window.shareData.tTitle = "我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
+            document.title = "保卫美丽银滩！我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
+            window.shareData.tTitle = "保卫美丽银滩！我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
             window.shareData.timeLineLink=shareurl;
-            sharetitle = "我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
-            wxSetTitle("我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？");
+            sharetitle = "保卫美丽银滩！我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？";
+            wxSetTitle("保卫美丽银滩！我用了"+n+"步围住赵瑞龙，超过"+(100-n)+"%的人，你能超过我吗？");
         }
         if(m == 2){
-            document.title = "我没有围住赵瑞龙，谁能帮我一起来？";
-            window.shareData.tTitle = "我没有围住赵瑞龙，谁能帮我一起来？";
+            document.title = "保卫美丽银滩！我没有围住赵瑞龙，谁能帮我一起来？";
+            window.shareData.tTitle = "保卫美丽银滩！我没有围住赵瑞龙，谁能帮我一起来？";
             window.shareData.timeLineLink=shareurl;
-            sharetitle = "我没有围住赵瑞龙，谁能帮我一起来？";
-            wxSetTitle("我没有围住赵瑞龙，谁能帮我一起来？");
+            sharetitle = "保卫美丽银滩！我没有围住赵瑞龙，谁能帮我一起来？";
+            wxSetTitle("保卫美丽银滩！我没有围住赵瑞龙，谁能帮我一起来？");
         }
         
         
