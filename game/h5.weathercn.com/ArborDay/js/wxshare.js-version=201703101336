@@ -31,7 +31,7 @@ var sharecontent="围住赵瑞龙 保卫美丽银滩!";
     var mebtnopenurl =siteUrl+"ArborDay/";
     function showme(){
     	//游戏结束后底部按钮跳转连接设置
-        window.location.href="http://www.baidu.com";
+        window.location.href="http://dwz.cn/5VhcMQ";
     }
     function wxSetTitle(title) {
     document.title = title;
